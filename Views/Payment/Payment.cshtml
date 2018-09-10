@@ -1,0 +1,43 @@
+﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://test.globalonepayapm.io/v1/paymentWidgets.js?checkoutId=@Session["PaymentCheckoutId"]"></script>
+<script>
+    var wpwlOptions = {
+         style: "card"
+    }
+</script>
+<style>
+    body {background-color:#f6f6f5;}
+</style>
+<form action="http://localhost:65488/Payment/ValidatePayment?id=@Session["PaymentCheckoutId"]" class="paymentWidgets" data-brands="DIRECTDEBIT_SEPA KLARNA_INVOICE"></form>
+@*<form action="/Payment/ValidatePayment" class="paymentWidgets" data-brands="VISA MASTER AMEX">
+    <div>Sample Payment Page</div>
+    <label> Account holder: </label> <input type="text" id="UserName" name="UserName" /><br />
+    <label> IBAN: </label> <input type="text" id="Password" name="Password" />
+    <input type="submit" value="Submit" id="ValidatePayment" />
+</form>*@
+@*<script>
+$(document).ready(function(){
+    $("#ValidatePayment").click(function () {
+        var RequestData = {
+            UserName: "worldventures",
+            Password: "AT152011128161647502"            
+        };
+        $.ajax({  
+            type: "GET",  
+            url: "/Payment/ValidatePayment",
+            data: JSON.stringify(RequestData),
+            dataType: "json",  
+            contentType: 'application/json; charset=utf-8',  
+            success: function(data) {  
+            alert("Success");  
+        },  
+        error: function() {  
+            alert("Error occured!!")  
+        }  
+    });  
+    });
+});
+</script>*@
+
+
+
